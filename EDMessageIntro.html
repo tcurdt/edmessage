@@ -1,0 +1,43 @@
+<HTML><HEAD><TITLE></TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<a href="EDMessageTOC.html">[UP]</a>
+
+<BR><BR><FONT COLOR="#000066"><H1><A NAME="">The EDMessage Framework</A></H1></FONT><BR>
+
+
+
+	<blockquote><DL><DT><B>Framework:</B> Library/Frameworks/EDMessage.framework</blockquote>
+	<blockquote><DL><DT><B>Header File Directories:</B> Library/Frameworks/EDMessage.framework/Headers</blockquote>
+
+
+<BR><BR>
+
+
+<h3>Introduction</h3>
+<p>This is a framework for mail/news message handling. It contains classes to analyse and create Internet messages with MIME extensions. It also contains an SMTP stream and an e-mail client class which can be used to send e-mails (with attachments) through an SMTP server; no local MTA is required.</p> 
+
+
+<h3>Message Classes</h3>
+<p>The classes in the message subproject are best described top-down. <b>EDInternetMessage</b> models most of the the features an RFC822 message with MIME extensions can have. It provides easy access to all header fields and to the body of a message. It also deals with the encoding and decoding between the transfer representation, a stream of bytes in form of an NSData object, and the object model. (Shall we call it MOM, message object model?) Interestingly, most of the funtionality is implemented in its superclass, <b>EDMessagePart</b>. This is due to the fact that the MIME standard allows for structured multipart messages to represent texts with embedded images etc. and all the subparts of a message are structured like a message. It is probably not useful to add other subclasses to EDMessagePart (famous last words) but it is likely that an application will work with instances of EDMessagePart and EDInternetMessage.</p>
+
+<p>The header field accessor methods implemented in EDMessagePart are limited to header fields describing the contents of the body. All other "common" header fields, generic accessor methods and the actual data structures to store the header are implemented in <b>EDHeaderBearingObject</b>. This division was introduced to allow other classes that represent objects with header to re-use this funtionality. (ALX3000 has an ALXOverview class to represent Usenet article overviews.) In a strict conceptual sense EDHeaderBearingObject is not really a superclass, more an adjunct, but Objective-C does not allow for multiple inhertance so this was the only way to go. Note that all header field values are cached in instance variables so that they only need to be decoded when they are accessed for the first time. Setting values, however, creates the encoded representation each time a value is changed. (Usually decoding happens more often than encoding so this is a fair compromise... I say.)</p>
+
+<h3>Header Field Coder</h3>
+<p>The actual coding of message header fields is handled by another class hierarchy, rooted in <b>EDHeaderFieldCoder</b> and in the HeaderCoder subproject. If it becomes neccessary to display header fields for which no accessor methods are provided it is usually sufficient to ask the header bearing object for a coder for the header field in question and use the stringValue method in the coder to retrieve the text. Somewhat like:<code>[[message decoderForHeaderField:@"X-Something"] stringValue]</code></p>
+
+
+<h3>Content Coder</h3>
+<p>There is an intricate relationship between the content header fields of a message, the structure of the message body, its intended use and the Foundation and AppKit classes to represent the body. In my opinion there is no general approach to modelling these relationships without loosing too much flexibility. For this reason EDMessagePart only provides the raw body data and leaves it up to the developer to decide how to best represent it. There are, however, subclasses of <b>EDContentCoder</b> in the content coder subproject that can be used to do certain standard transformations, a text/plain message into an NSString or a multipart/mixed message into an array of EDMessageParts, but it is up to the developer to decide which coder class to use for which message or message part.</p>
+
+<h3>Sending Mail</h3>
+<p><b>EDMailAgent</b> might be the reason why you use this framework. An easy to use, yet powerful class to send either text mails with optional attachments or "full" EDInternetMessages. The source code can be taken as an example for using the other classes in the framework.</p>
+
+<p>EDMailAgent uses <b>EDSMTPStream</b>, a subclass of EDStream in the <a href="../EDCommon/EDCommonTOC.html">EDCommon Framework</a>, to handle the intricacy of the "simple" mail transfer protocol. It makes use of the 8 bit transport and pipelining extensions. The extension discovery should also be able to deal with most broken SMTP implementations.</p>
+
+<h3>Foundation Extensions</h3>
+<p>The foundation subproject contains categories for various foundation classes that provide functionality useful in the context of this framework. The most interesting ones should be <b>NSString(MessageUtils)</b> which has methods to rewrap and quote messages and <b>NSData(MIME)</b> which contains methods for the various MIME encodings. All MIME functionality dealing with character set names and content types can be found in the NSString category in the <a href="../EDCommon/EDCommonTOC.html">EDCommon Framework</a>.</p>
+
+<P><HR>
+Copyright &copy; 2002 by Erik Doernenburg.  All Rights Reserved.  
+<P>
+</BODY></HTML>

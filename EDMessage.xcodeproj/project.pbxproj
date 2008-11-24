@@ -1,0 +1,904 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		031A069C0E9F154A00DADB91 /* mailsender.m in Sources */ = {isa = PBXBuildFile; fileRef = 031A069B0E9F154A00DADB91 /* mailsender.m */; };
+		031A06B40E9F168A00DADB91 /* EDMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* EDMessage.framework */; };
+		031A06B60E9F169100DADB91 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		03AAC6390EC99B080083BD57 /* EDCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAC6320EC9996D0083BD57 /* EDCommon.framework */; };
+		03C571FC0E9D1DD50009F0F9 /* EDSecureSMTPStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C571FA0E9D1DD50009F0F9 /* EDSecureSMTPStream.h */; };
+		03C571FD0E9D1DD50009F0F9 /* EDSecureSMTPStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C571FB0E9D1DD50009F0F9 /* EDSecureSMTPStream.m */; };
+		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		DE0C15960E61BA1F00C1BC3F /* parsedate.y in Sources */ = {isa = PBXBuildFile; fileRef = DE0C15950E61BA1F00C1BC3F /* parsedate.y */; };
+		DE221E890DD3E05B00DBD46E /* EDMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221E850DD3E05B00DBD46E /* EDMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221E8A0DD3E05B00DBD46E /* EDMessageDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221E860DD3E05B00DBD46E /* EDMessageDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221E8C0DD3E05B00DBD46E /* utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221E880DD3E05B00DBD46E /* utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221E9B0DD3E08400DBD46E /* EDCompositeContentCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221E8F0DD3E08400DBD46E /* EDCompositeContentCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221E9C0DD3E08400DBD46E /* EDCompositeContentCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221E900DD3E08400DBD46E /* EDCompositeContentCoder.m */; };
+		DE221E9D0DD3E08400DBD46E /* EDContentCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221E910DD3E08400DBD46E /* EDContentCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221E9E0DD3E08400DBD46E /* EDContentCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221E920DD3E08400DBD46E /* EDContentCoder.m */; };
+		DE221E9F0DD3E08400DBD46E /* EDHTMLTextContentCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221E930DD3E08400DBD46E /* EDHTMLTextContentCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EA00DD3E08400DBD46E /* EDHTMLTextContentCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221E940DD3E08400DBD46E /* EDHTMLTextContentCoder.m */; };
+		DE221EA10DD3E08400DBD46E /* EDMultimediaContentCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221E950DD3E08400DBD46E /* EDMultimediaContentCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EA20DD3E08400DBD46E /* EDMultimediaContentCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221E960DD3E08400DBD46E /* EDMultimediaContentCoder.m */; };
+		DE221EA30DD3E08400DBD46E /* EDPlainTextContentCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221E970DD3E08400DBD46E /* EDPlainTextContentCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EA40DD3E08400DBD46E /* EDPlainTextContentCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221E980DD3E08400DBD46E /* EDPlainTextContentCoder.m */; };
+		DE221EA50DD3E08400DBD46E /* EDTextContentCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221E990DD3E08400DBD46E /* EDTextContentCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EA60DD3E08400DBD46E /* EDTextContentCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221E9A0DD3E08400DBD46E /* EDTextContentCoder.m */; };
+		DE221EB70DD3E0AE00DBD46E /* NSCalendarDate+NetExt.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221EA90DD3E0AE00DBD46E /* NSCalendarDate+NetExt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EB80DD3E0AE00DBD46E /* NSCalendarDate+NetExt.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221EAA0DD3E0AE00DBD46E /* NSCalendarDate+NetExt.m */; };
+		DE221EBB0DD3E0AE00DBD46E /* NSCharacterSet+MIME.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221EAD0DD3E0AE00DBD46E /* NSCharacterSet+MIME.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EBC0DD3E0AE00DBD46E /* NSCharacterSet+MIME.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221EAE0DD3E0AE00DBD46E /* NSCharacterSet+MIME.m */; };
+		DE221EBD0DD3E0AE00DBD46E /* NSData+MIME.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221EAF0DD3E0AE00DBD46E /* NSData+MIME.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EBE0DD3E0AE00DBD46E /* NSData+MIME.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221EB00DD3E0AE00DBD46E /* NSData+MIME.m */; };
+		DE221EBF0DD3E0AE00DBD46E /* NSImage+XFace.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221EB10DD3E0AE00DBD46E /* NSImage+XFace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EC00DD3E0AE00DBD46E /* NSImage+XFace.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221EB20DD3E0AE00DBD46E /* NSImage+XFace.m */; };
+		DE221EC10DD3E0AE00DBD46E /* NSString+MessageUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221EB30DD3E0AE00DBD46E /* NSString+MessageUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EC20DD3E0AE00DBD46E /* NSString+MessageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221EB40DD3E0AE00DBD46E /* NSString+MessageUtils.m */; };
+		DE221EC30DD3E0AE00DBD46E /* NSString+PlainTextFlowedExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221EB50DD3E0AE00DBD46E /* NSString+PlainTextFlowedExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EC40DD3E0AE00DBD46E /* NSString+PlainTextFlowedExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221EB60DD3E0AE00DBD46E /* NSString+PlainTextFlowedExtensions.m */; };
+		DE221ED40DD3E0DD00DBD46E /* EDDateFieldCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221EC70DD3E0DD00DBD46E /* EDDateFieldCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221ED50DD3E0DD00DBD46E /* EDDateFieldCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221EC80DD3E0DD00DBD46E /* EDDateFieldCoder.m */; };
+		DE221ED60DD3E0DD00DBD46E /* EDEntityFieldCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221EC90DD3E0DD00DBD46E /* EDEntityFieldCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221ED70DD3E0DD00DBD46E /* EDEntityFieldCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221ECA0DD3E0DD00DBD46E /* EDEntityFieldCoder.m */; };
+		DE221ED80DD3E0DD00DBD46E /* EDFaceFieldCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221ECB0DD3E0DD00DBD46E /* EDFaceFieldCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221ED90DD3E0DD00DBD46E /* EDFaceFieldCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221ECC0DD3E0DD00DBD46E /* EDFaceFieldCoder.m */; };
+		DE221EDA0DD3E0DD00DBD46E /* EDHeaderFieldCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221ECD0DD3E0DD00DBD46E /* EDHeaderFieldCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EDB0DD3E0DD00DBD46E /* EDHeaderFieldCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221ECE0DD3E0DD00DBD46E /* EDHeaderFieldCoder.m */; };
+		DE221EDC0DD3E0DD00DBD46E /* EDIdListFieldCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221ECF0DD3E0DD00DBD46E /* EDIdListFieldCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EDD0DD3E0DD00DBD46E /* EDIdListFieldCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221ED00DD3E0DD00DBD46E /* EDIdListFieldCoder.m */; };
+		DE221EDE0DD3E0DD00DBD46E /* EDTextFieldCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221ED10DD3E0DD00DBD46E /* EDTextFieldCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EDF0DD3E0DD00DBD46E /* EDTextFieldCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221ED20DD3E0DD00DBD46E /* EDTextFieldCoder.m */; };
+		DE221EE70DD3E10F00DBD46E /* EDMailAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221EE30DD3E10F00DBD46E /* EDMailAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EE80DD3E10F00DBD46E /* EDMailAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221EE40DD3E10F00DBD46E /* EDMailAgent.m */; };
+		DE221EE90DD3E10F00DBD46E /* EDSMTPStream.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221EE50DD3E10F00DBD46E /* EDSMTPStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EEA0DD3E10F00DBD46E /* EDSMTPStream.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221EE60DD3E10F00DBD46E /* EDSMTPStream.m */; };
+		DE221EF50DD3E13B00DBD46E /* EDHeaderBearingObject.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221EED0DD3E13B00DBD46E /* EDHeaderBearingObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EF60DD3E13B00DBD46E /* EDHeaderBearingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221EEE0DD3E13B00DBD46E /* EDHeaderBearingObject.m */; };
+		DE221EF70DD3E13B00DBD46E /* EDInternetMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221EEF0DD3E13B00DBD46E /* EDInternetMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EF80DD3E13B00DBD46E /* EDInternetMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221EF00DD3E13B00DBD46E /* EDInternetMessage.m */; };
+		DE221EF90DD3E13B00DBD46E /* EDMConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221EF10DD3E13B00DBD46E /* EDMConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EFA0DD3E13B00DBD46E /* EDMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221EF20DD3E13B00DBD46E /* EDMConstants.m */; };
+		DE221EFB0DD3E13B00DBD46E /* EDMessagePart.h in Headers */ = {isa = PBXBuildFile; fileRef = DE221EF30DD3E13B00DBD46E /* EDMessagePart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE221EFC0DD3E13B00DBD46E /* EDMessagePart.m in Sources */ = {isa = PBXBuildFile; fileRef = DE221EF40DD3E13B00DBD46E /* EDMessagePart.m */; };
+		DEB8D1AD0DD52DB4007E88A5 /* OPSSLSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = DEB8D1AB0DD52DB4007E88A5 /* OPSSLSocket.h */; };
+		DEB8D1AE0DD52DB4007E88A5 /* OPSSLSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB8D1AC0DD52DB4007E88A5 /* OPSSLSocket.m */; };
+		DEB8D1B20DD52E52007E88A5 /* NSString+OPOSErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = DEB8D1B00DD52E52007E88A5 /* NSString+OPOSErrors.h */; };
+		DEB8D1B30DD52E52007E88A5 /* NSString+OPOSErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB8D1B10DD52E52007E88A5 /* NSString+OPOSErrors.m */; };
+		DEB8D3380DD8A43E007E88A5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB8D3370DD8A43E007E88A5 /* Security.framework */; };
+		DEDA09100DDA2A6400A8B498 /* EDMessageTOC.html in Resources */ = {isa = PBXBuildFile; fileRef = DEDA090E0DDA2A6300A8B498 /* EDMessageTOC.html */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03AAC6310EC9996D0083BD57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03AAC6280EC9996D0083BD57 /* EDCommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AD39F33905443F3E0086D411;
+			remoteInfo = EDCommon;
+		};
+		03AAC6430EC99F530083BD57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03AAC6280EC9996D0083BD57 /* EDCommon.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AD39F29B05443F3D0086D411;
+			remoteInfo = EDCommon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		031A06950E9F14EB00DADB91 /* MailSender */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MailSender; sourceTree = BUILT_PRODUCTS_DIR; };
+		031A069B0E9F154A00DADB91 /* mailsender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mailsender.m; path = Test/mailsender.m; sourceTree = "<group>"; };
+		03AAC6280EC9996D0083BD57 /* EDCommon.xcodeproj */ = {isa = PBXFileReference; explicitFileType = "wrapper.pb-project"; name = EDCommon.xcodeproj; path = Dependencies/edcommon/EDCommon.xcodeproj; sourceTree = SOURCE_ROOT; };
+		03C571FA0E9D1DD50009F0F9 /* EDSecureSMTPStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDSecureSMTPStream.h; sourceTree = "<group>"; };
+		03C571FB0E9D1DD50009F0F9 /* EDSecureSMTPStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDSecureSMTPStream.m; sourceTree = "<group>"; };
+		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DC2EF5B0486A6940098B216 /* EDMessage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EDMessage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		DE0C15950E61BA1F00C1BC3F /* parsedate.y */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; name = parsedate.y; path = HeaderFieldCoder.subproj/parsedate.y; sourceTree = "<group>"; };
+		DE221E850DD3E05B00DBD46E /* EDMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDMessage.h; sourceTree = "<group>"; };
+		DE221E860DD3E05B00DBD46E /* EDMessageDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDMessageDefines.h; sourceTree = "<group>"; };
+		DE221E880DD3E05B00DBD46E /* utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utilities.h; sourceTree = "<group>"; };
+		DE221E8F0DD3E08400DBD46E /* EDCompositeContentCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDCompositeContentCoder.h; path = ContentCoder.subproj/EDCompositeContentCoder.h; sourceTree = "<group>"; };
+		DE221E900DD3E08400DBD46E /* EDCompositeContentCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDCompositeContentCoder.m; path = ContentCoder.subproj/EDCompositeContentCoder.m; sourceTree = "<group>"; };
+		DE221E910DD3E08400DBD46E /* EDContentCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDContentCoder.h; path = ContentCoder.subproj/EDContentCoder.h; sourceTree = "<group>"; };
+		DE221E920DD3E08400DBD46E /* EDContentCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDContentCoder.m; path = ContentCoder.subproj/EDContentCoder.m; sourceTree = "<group>"; };
+		DE221E930DD3E08400DBD46E /* EDHTMLTextContentCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDHTMLTextContentCoder.h; path = ContentCoder.subproj/EDHTMLTextContentCoder.h; sourceTree = "<group>"; };
+		DE221E940DD3E08400DBD46E /* EDHTMLTextContentCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDHTMLTextContentCoder.m; path = ContentCoder.subproj/EDHTMLTextContentCoder.m; sourceTree = "<group>"; };
+		DE221E950DD3E08400DBD46E /* EDMultimediaContentCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDMultimediaContentCoder.h; path = ContentCoder.subproj/EDMultimediaContentCoder.h; sourceTree = "<group>"; };
+		DE221E960DD3E08400DBD46E /* EDMultimediaContentCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDMultimediaContentCoder.m; path = ContentCoder.subproj/EDMultimediaContentCoder.m; sourceTree = "<group>"; };
+		DE221E970DD3E08400DBD46E /* EDPlainTextContentCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDPlainTextContentCoder.h; path = ContentCoder.subproj/EDPlainTextContentCoder.h; sourceTree = "<group>"; };
+		DE221E980DD3E08400DBD46E /* EDPlainTextContentCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDPlainTextContentCoder.m; path = ContentCoder.subproj/EDPlainTextContentCoder.m; sourceTree = "<group>"; };
+		DE221E990DD3E08400DBD46E /* EDTextContentCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDTextContentCoder.h; path = ContentCoder.subproj/EDTextContentCoder.h; sourceTree = "<group>"; };
+		DE221E9A0DD3E08400DBD46E /* EDTextContentCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDTextContentCoder.m; path = ContentCoder.subproj/EDTextContentCoder.m; sourceTree = "<group>"; };
+		DE221EA90DD3E0AE00DBD46E /* NSCalendarDate+NetExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSCalendarDate+NetExt.h"; path = "FoundationExtensions.subproj/NSCalendarDate+NetExt.h"; sourceTree = "<group>"; };
+		DE221EAA0DD3E0AE00DBD46E /* NSCalendarDate+NetExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSCalendarDate+NetExt.m"; path = "FoundationExtensions.subproj/NSCalendarDate+NetExt.m"; sourceTree = "<group>"; };
+		DE221EAD0DD3E0AE00DBD46E /* NSCharacterSet+MIME.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSCharacterSet+MIME.h"; path = "FoundationExtensions.subproj/NSCharacterSet+MIME.h"; sourceTree = "<group>"; };
+		DE221EAE0DD3E0AE00DBD46E /* NSCharacterSet+MIME.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSCharacterSet+MIME.m"; path = "FoundationExtensions.subproj/NSCharacterSet+MIME.m"; sourceTree = "<group>"; };
+		DE221EAF0DD3E0AE00DBD46E /* NSData+MIME.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+MIME.h"; path = "FoundationExtensions.subproj/NSData+MIME.h"; sourceTree = "<group>"; };
+		DE221EB00DD3E0AE00DBD46E /* NSData+MIME.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+MIME.m"; path = "FoundationExtensions.subproj/NSData+MIME.m"; sourceTree = "<group>"; };
+		DE221EB10DD3E0AE00DBD46E /* NSImage+XFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSImage+XFace.h"; path = "FoundationExtensions.subproj/NSImage+XFace.h"; sourceTree = "<group>"; };
+		DE221EB20DD3E0AE00DBD46E /* NSImage+XFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSImage+XFace.m"; path = "FoundationExtensions.subproj/NSImage+XFace.m"; sourceTree = "<group>"; };
+		DE221EB30DD3E0AE00DBD46E /* NSString+MessageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MessageUtils.h"; path = "FoundationExtensions.subproj/NSString+MessageUtils.h"; sourceTree = "<group>"; };
+		DE221EB40DD3E0AE00DBD46E /* NSString+MessageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MessageUtils.m"; path = "FoundationExtensions.subproj/NSString+MessageUtils.m"; sourceTree = "<group>"; };
+		DE221EB50DD3E0AE00DBD46E /* NSString+PlainTextFlowedExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+PlainTextFlowedExtensions.h"; path = "FoundationExtensions.subproj/NSString+PlainTextFlowedExtensions.h"; sourceTree = "<group>"; };
+		DE221EB60DD3E0AE00DBD46E /* NSString+PlainTextFlowedExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+PlainTextFlowedExtensions.m"; path = "FoundationExtensions.subproj/NSString+PlainTextFlowedExtensions.m"; sourceTree = "<group>"; };
+		DE221EC70DD3E0DD00DBD46E /* EDDateFieldCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDDateFieldCoder.h; path = HeaderFieldCoder.subproj/EDDateFieldCoder.h; sourceTree = "<group>"; };
+		DE221EC80DD3E0DD00DBD46E /* EDDateFieldCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDDateFieldCoder.m; path = HeaderFieldCoder.subproj/EDDateFieldCoder.m; sourceTree = "<group>"; };
+		DE221EC90DD3E0DD00DBD46E /* EDEntityFieldCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDEntityFieldCoder.h; path = HeaderFieldCoder.subproj/EDEntityFieldCoder.h; sourceTree = "<group>"; };
+		DE221ECA0DD3E0DD00DBD46E /* EDEntityFieldCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDEntityFieldCoder.m; path = HeaderFieldCoder.subproj/EDEntityFieldCoder.m; sourceTree = "<group>"; };
+		DE221ECB0DD3E0DD00DBD46E /* EDFaceFieldCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDFaceFieldCoder.h; path = HeaderFieldCoder.subproj/EDFaceFieldCoder.h; sourceTree = "<group>"; };
+		DE221ECC0DD3E0DD00DBD46E /* EDFaceFieldCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDFaceFieldCoder.m; path = HeaderFieldCoder.subproj/EDFaceFieldCoder.m; sourceTree = "<group>"; };
+		DE221ECD0DD3E0DD00DBD46E /* EDHeaderFieldCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDHeaderFieldCoder.h; path = HeaderFieldCoder.subproj/EDHeaderFieldCoder.h; sourceTree = "<group>"; };
+		DE221ECE0DD3E0DD00DBD46E /* EDHeaderFieldCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDHeaderFieldCoder.m; path = HeaderFieldCoder.subproj/EDHeaderFieldCoder.m; sourceTree = "<group>"; };
+		DE221ECF0DD3E0DD00DBD46E /* EDIdListFieldCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDIdListFieldCoder.h; path = HeaderFieldCoder.subproj/EDIdListFieldCoder.h; sourceTree = "<group>"; };
+		DE221ED00DD3E0DD00DBD46E /* EDIdListFieldCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDIdListFieldCoder.m; path = HeaderFieldCoder.subproj/EDIdListFieldCoder.m; sourceTree = "<group>"; };
+		DE221ED10DD3E0DD00DBD46E /* EDTextFieldCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDTextFieldCoder.h; path = HeaderFieldCoder.subproj/EDTextFieldCoder.h; sourceTree = "<group>"; };
+		DE221ED20DD3E0DD00DBD46E /* EDTextFieldCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDTextFieldCoder.m; path = HeaderFieldCoder.subproj/EDTextFieldCoder.m; sourceTree = "<group>"; };
+		DE221EE30DD3E10F00DBD46E /* EDMailAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDMailAgent.h; path = Mail.subproj/EDMailAgent.h; sourceTree = "<group>"; };
+		DE221EE40DD3E10F00DBD46E /* EDMailAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDMailAgent.m; path = Mail.subproj/EDMailAgent.m; sourceTree = "<group>"; };
+		DE221EE50DD3E10F00DBD46E /* EDSMTPStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDSMTPStream.h; path = Mail.subproj/EDSMTPStream.h; sourceTree = "<group>"; };
+		DE221EE60DD3E10F00DBD46E /* EDSMTPStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDSMTPStream.m; path = Mail.subproj/EDSMTPStream.m; sourceTree = "<group>"; };
+		DE221EED0DD3E13B00DBD46E /* EDHeaderBearingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDHeaderBearingObject.h; path = Message.subproj/EDHeaderBearingObject.h; sourceTree = "<group>"; };
+		DE221EEE0DD3E13B00DBD46E /* EDHeaderBearingObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDHeaderBearingObject.m; path = Message.subproj/EDHeaderBearingObject.m; sourceTree = "<group>"; };
+		DE221EEF0DD3E13B00DBD46E /* EDInternetMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDInternetMessage.h; path = Message.subproj/EDInternetMessage.h; sourceTree = "<group>"; };
+		DE221EF00DD3E13B00DBD46E /* EDInternetMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDInternetMessage.m; path = Message.subproj/EDInternetMessage.m; sourceTree = "<group>"; };
+		DE221EF10DD3E13B00DBD46E /* EDMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDMConstants.h; path = Message.subproj/EDMConstants.h; sourceTree = "<group>"; };
+		DE221EF20DD3E13B00DBD46E /* EDMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDMConstants.m; path = Message.subproj/EDMConstants.m; sourceTree = "<group>"; };
+		DE221EF30DD3E13B00DBD46E /* EDMessagePart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDMessagePart.h; path = Message.subproj/EDMessagePart.h; sourceTree = "<group>"; };
+		DE221EF40DD3E13B00DBD46E /* EDMessagePart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDMessagePart.m; path = Message.subproj/EDMessagePart.m; sourceTree = "<group>"; };
+		DEB8D1AB0DD52DB4007E88A5 /* OPSSLSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OPSSLSocket.h; path = OP.subproj/OPSSLSocket.h; sourceTree = "<group>"; };
+		DEB8D1AC0DD52DB4007E88A5 /* OPSSLSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OPSSLSocket.m; path = OP.subproj/OPSSLSocket.m; sourceTree = "<group>"; };
+		DEB8D1B00DD52E52007E88A5 /* NSString+OPOSErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+OPOSErrors.h"; path = "OP.subproj/NSString+OPOSErrors.h"; sourceTree = "<group>"; };
+		DEB8D1B10DD52E52007E88A5 /* NSString+OPOSErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+OPOSErrors.m"; path = "OP.subproj/NSString+OPOSErrors.m"; sourceTree = "<group>"; };
+		DEB8D3370DD8A43E007E88A5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		DEDA090E0DDA2A6300A8B498 /* EDMessageTOC.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = EDMessageTOC.html; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		031A06930E9F14EA00DADB91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				031A06B40E9F168A00DADB91 /* EDMessage.framework in Frameworks */,
+				031A06B60E9F169100DADB91 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF560486A6940098B216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
+				DEB8D3380DD8A43E007E88A5 /* Security.framework in Frameworks */,
+				03AAC6390EC99B080083BD57 /* EDCommon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		031A068F0E9F14CD00DADB91 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				031A069B0E9F154A00DADB91 /* mailsender.m */,
+			);
+			name = Test;
+			sourceTree = "<group>";
+		};
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5B0486A6940098B216 /* EDMessage.framework */,
+				031A06950E9F14EB00DADB91 /* MailSender */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03AAC6240EC9993D0083BD57 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				03AAC6280EC9996D0083BD57 /* EDCommon.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		03AAC62E0EC9996D0083BD57 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03AAC6320EC9996D0083BD57 /* EDCommon.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* EDMessage */ = {
+			isa = PBXGroup;
+			children = (
+				DE158C0B0E198E7F00447697 /* Global Headers */,
+				DE158C0C0E198F7B00447697 /* FoundationExtensions */,
+				DE221EEC0DD3E12400DBD46E /* Message */,
+				DE158C1B0E1993EC00447697 /* HeaderFieldCoder */,
+				DE221E8E0DD3E06300DBD46E /* ContentCoder */,
+				DE221EE20DD3E0EC00DBD46E /* Mail */,
+				DEB8D1A50DD52C02007E88A5 /* OPMessage Classes */,
+				089C1665FE841158C02AAC07 /* Resources */,
+				031A068F0E9F14CD00DADB91 /* Test */,
+				03AAC6240EC9993D0083BD57 /* Dependencies */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DFFF38A50411DB9C8B /* Products */,
+				DEDA09150DDA2A8100A8B498 /* Documentation */,
+			);
+			name = EDMessage;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
+				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5A0486A6940098B216 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7B2FEA5585E11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEB8D3370DD8A43E007E88A5 /* Security.framework */,
+				0867D6A5FE840307C02AAC07 /* AppKit.framework */,
+				D2F7E79907B2D74100F64583 /* CoreData.framework */,
+				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		DE158C0B0E198E7F00447697 /* Global Headers */ = {
+			isa = PBXGroup;
+			children = (
+				DE221E850DD3E05B00DBD46E /* EDMessage.h */,
+				DE221E860DD3E05B00DBD46E /* EDMessageDefines.h */,
+				DE221E880DD3E05B00DBD46E /* utilities.h */,
+			);
+			name = "Global Headers";
+			sourceTree = "<group>";
+		};
+		DE158C0C0E198F7B00447697 /* FoundationExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE158C0D0E198F8E00447697 /* Headers */,
+				DE158C0E0E198F9700447697 /* Classes */,
+			);
+			name = FoundationExtensions;
+			sourceTree = "<group>";
+		};
+		DE158C0D0E198F8E00447697 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				DE221EA90DD3E0AE00DBD46E /* NSCalendarDate+NetExt.h */,
+				DE221EAD0DD3E0AE00DBD46E /* NSCharacterSet+MIME.h */,
+				DE221EAF0DD3E0AE00DBD46E /* NSData+MIME.h */,
+				DE221EB10DD3E0AE00DBD46E /* NSImage+XFace.h */,
+				DE221EB30DD3E0AE00DBD46E /* NSString+MessageUtils.h */,
+				DE221EB50DD3E0AE00DBD46E /* NSString+PlainTextFlowedExtensions.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		DE158C0E0E198F9700447697 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DE221EAA0DD3E0AE00DBD46E /* NSCalendarDate+NetExt.m */,
+				DE221EAE0DD3E0AE00DBD46E /* NSCharacterSet+MIME.m */,
+				DE221EB00DD3E0AE00DBD46E /* NSData+MIME.m */,
+				DE221EB20DD3E0AE00DBD46E /* NSImage+XFace.m */,
+				DE221EB40DD3E0AE00DBD46E /* NSString+MessageUtils.m */,
+				DE221EB60DD3E0AE00DBD46E /* NSString+PlainTextFlowedExtensions.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		DE158C130E1991F100447697 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				DE221EF10DD3E13B00DBD46E /* EDMConstants.h */,
+				DE221EED0DD3E13B00DBD46E /* EDHeaderBearingObject.h */,
+				DE221EF30DD3E13B00DBD46E /* EDMessagePart.h */,
+				DE221EEF0DD3E13B00DBD46E /* EDInternetMessage.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		DE158C140E1991FA00447697 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DE221EEE0DD3E13B00DBD46E /* EDHeaderBearingObject.m */,
+				DE221EF40DD3E13B00DBD46E /* EDMessagePart.m */,
+				DE221EF00DD3E13B00DBD46E /* EDInternetMessage.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		DE158C170E1992FB00447697 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DE221EF20DD3E13B00DBD46E /* EDMConstants.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		DE158C1B0E1993EC00447697 /* HeaderFieldCoder */ = {
+			isa = PBXGroup;
+			children = (
+				DE158C1E0E19941300447697 /* Headers */,
+				DE158C1D0E19940900447697 /* Classes */,
+				DE158C1C0E19940000447697 /* Other Sources */,
+			);
+			name = HeaderFieldCoder;
+			sourceTree = "<group>";
+		};
+		DE158C1C0E19940000447697 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DE0C15950E61BA1F00C1BC3F /* parsedate.y */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		DE158C1D0E19940900447697 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DE221EC80DD3E0DD00DBD46E /* EDDateFieldCoder.m */,
+				DE221ECA0DD3E0DD00DBD46E /* EDEntityFieldCoder.m */,
+				DE221ECC0DD3E0DD00DBD46E /* EDFaceFieldCoder.m */,
+				DE221ECE0DD3E0DD00DBD46E /* EDHeaderFieldCoder.m */,
+				DE221ED00DD3E0DD00DBD46E /* EDIdListFieldCoder.m */,
+				DE221ED20DD3E0DD00DBD46E /* EDTextFieldCoder.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		DE158C1E0E19941300447697 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				DE221EC70DD3E0DD00DBD46E /* EDDateFieldCoder.h */,
+				DE221EC90DD3E0DD00DBD46E /* EDEntityFieldCoder.h */,
+				DE221ECB0DD3E0DD00DBD46E /* EDFaceFieldCoder.h */,
+				DE221ECD0DD3E0DD00DBD46E /* EDHeaderFieldCoder.h */,
+				DE221ECF0DD3E0DD00DBD46E /* EDIdListFieldCoder.h */,
+				DE221ED10DD3E0DD00DBD46E /* EDTextFieldCoder.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		DE158C2F0E19957600447697 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DE221E900DD3E08400DBD46E /* EDCompositeContentCoder.m */,
+				DE221E920DD3E08400DBD46E /* EDContentCoder.m */,
+				DE221E940DD3E08400DBD46E /* EDHTMLTextContentCoder.m */,
+				DE221E960DD3E08400DBD46E /* EDMultimediaContentCoder.m */,
+				DE221E980DD3E08400DBD46E /* EDPlainTextContentCoder.m */,
+				DE221E9A0DD3E08400DBD46E /* EDTextContentCoder.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		DE158C300E19958000447697 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				DE221E8F0DD3E08400DBD46E /* EDCompositeContentCoder.h */,
+				DE221E910DD3E08400DBD46E /* EDContentCoder.h */,
+				DE221E930DD3E08400DBD46E /* EDHTMLTextContentCoder.h */,
+				DE221E950DD3E08400DBD46E /* EDMultimediaContentCoder.h */,
+				DE221E970DD3E08400DBD46E /* EDPlainTextContentCoder.h */,
+				DE221E990DD3E08400DBD46E /* EDTextContentCoder.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		DE158C360E19964B00447697 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DE221EE40DD3E10F00DBD46E /* EDMailAgent.m */,
+				DE221EE60DD3E10F00DBD46E /* EDSMTPStream.m */,
+				03C571FB0E9D1DD50009F0F9 /* EDSecureSMTPStream.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		DE158C370E19965300447697 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				DE221EE30DD3E10F00DBD46E /* EDMailAgent.h */,
+				DE221EE50DD3E10F00DBD46E /* EDSMTPStream.h */,
+				03C571FA0E9D1DD50009F0F9 /* EDSecureSMTPStream.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		DE158C3B0E19972400447697 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DEB8D1B10DD52E52007E88A5 /* NSString+OPOSErrors.m */,
+				DEB8D1AC0DD52DB4007E88A5 /* OPSSLSocket.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		DE158C3C0E19972D00447697 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				DEB8D1B00DD52E52007E88A5 /* NSString+OPOSErrors.h */,
+				DEB8D1AB0DD52DB4007E88A5 /* OPSSLSocket.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		DE221E8E0DD3E06300DBD46E /* ContentCoder */ = {
+			isa = PBXGroup;
+			children = (
+				DE158C300E19958000447697 /* Headers */,
+				DE158C2F0E19957600447697 /* Classes */,
+			);
+			name = ContentCoder;
+			sourceTree = "<group>";
+		};
+		DE221EE20DD3E0EC00DBD46E /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				DE158C370E19965300447697 /* Headers */,
+				DE158C360E19964B00447697 /* Classes */,
+			);
+			name = Mail;
+			sourceTree = "<group>";
+		};
+		DE221EEC0DD3E12400DBD46E /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				DE158C130E1991F100447697 /* Headers */,
+				DE158C140E1991FA00447697 /* Classes */,
+				DE158C170E1992FB00447697 /* Other Sources */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		DEB8D1A50DD52C02007E88A5 /* OPMessage Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DE158C3C0E19972D00447697 /* Headers */,
+				DE158C3B0E19972400447697 /* Classes */,
+			);
+			name = "OPMessage Classes";
+			sourceTree = "<group>";
+		};
+		DEDA09150DDA2A8100A8B498 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				DEDA090E0DDA2A6300A8B498 /* EDMessageTOC.html */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8DC2EF500486A6940098B216 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE221E890DD3E05B00DBD46E /* EDMessage.h in Headers */,
+				DE221E8A0DD3E05B00DBD46E /* EDMessageDefines.h in Headers */,
+				DE221E8C0DD3E05B00DBD46E /* utilities.h in Headers */,
+				DE221E9B0DD3E08400DBD46E /* EDCompositeContentCoder.h in Headers */,
+				DE221E9D0DD3E08400DBD46E /* EDContentCoder.h in Headers */,
+				DE221E9F0DD3E08400DBD46E /* EDHTMLTextContentCoder.h in Headers */,
+				DE221EA10DD3E08400DBD46E /* EDMultimediaContentCoder.h in Headers */,
+				DE221EA30DD3E08400DBD46E /* EDPlainTextContentCoder.h in Headers */,
+				DE221EA50DD3E08400DBD46E /* EDTextContentCoder.h in Headers */,
+				DE221EB70DD3E0AE00DBD46E /* NSCalendarDate+NetExt.h in Headers */,
+				DE221EBB0DD3E0AE00DBD46E /* NSCharacterSet+MIME.h in Headers */,
+				DE221EBD0DD3E0AE00DBD46E /* NSData+MIME.h in Headers */,
+				DE221EBF0DD3E0AE00DBD46E /* NSImage+XFace.h in Headers */,
+				DE221EC10DD3E0AE00DBD46E /* NSString+MessageUtils.h in Headers */,
+				DE221EC30DD3E0AE00DBD46E /* NSString+PlainTextFlowedExtensions.h in Headers */,
+				DE221ED40DD3E0DD00DBD46E /* EDDateFieldCoder.h in Headers */,
+				DE221ED60DD3E0DD00DBD46E /* EDEntityFieldCoder.h in Headers */,
+				DE221ED80DD3E0DD00DBD46E /* EDFaceFieldCoder.h in Headers */,
+				DE221EDA0DD3E0DD00DBD46E /* EDHeaderFieldCoder.h in Headers */,
+				DE221EDC0DD3E0DD00DBD46E /* EDIdListFieldCoder.h in Headers */,
+				DE221EDE0DD3E0DD00DBD46E /* EDTextFieldCoder.h in Headers */,
+				DE221EE70DD3E10F00DBD46E /* EDMailAgent.h in Headers */,
+				DE221EE90DD3E10F00DBD46E /* EDSMTPStream.h in Headers */,
+				DE221EF50DD3E13B00DBD46E /* EDHeaderBearingObject.h in Headers */,
+				DE221EF70DD3E13B00DBD46E /* EDInternetMessage.h in Headers */,
+				DE221EF90DD3E13B00DBD46E /* EDMConstants.h in Headers */,
+				DE221EFB0DD3E13B00DBD46E /* EDMessagePart.h in Headers */,
+				DEB8D1AD0DD52DB4007E88A5 /* OPSSLSocket.h in Headers */,
+				DEB8D1B20DD52E52007E88A5 /* NSString+OPOSErrors.h in Headers */,
+				03C571FC0E9D1DD50009F0F9 /* EDSecureSMTPStream.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		031A06940E9F14EA00DADB91 /* MailSender */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 031A06990E9F151200DADB91 /* Build configuration list for PBXNativeTarget "MailSender" */;
+			buildPhases = (
+				031A06920E9F14EA00DADB91 /* Sources */,
+				031A06930E9F14EA00DADB91 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MailSender;
+			productName = MailSender;
+			productReference = 031A06950E9F14EB00DADB91 /* MailSender */;
+			productType = "com.apple.product-type.tool";
+		};
+		8DC2EF4F0486A6940098B216 /* EDMessage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "EDMessage" */;
+			buildPhases = (
+				8DC2EF500486A6940098B216 /* Headers */,
+				8DC2EF520486A6940098B216 /* Resources */,
+				8DC2EF540486A6940098B216 /* Sources */,
+				8DC2EF560486A6940098B216 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03AAC6440EC99F530083BD57 /* PBXTargetDependency */,
+			);
+			name = EDMessage;
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = EDMessage;
+			productReference = 8DC2EF5B0486A6940098B216 /* EDMessage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "EDMessage" */;
+			compatibilityVersion = "Xcode 3.0";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* EDMessage */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 03AAC62E0EC9996D0083BD57 /* Products */;
+					ProjectRef = 03AAC6280EC9996D0083BD57 /* EDCommon.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8DC2EF4F0486A6940098B216 /* EDMessage */,
+				031A06940E9F14EA00DADB91 /* MailSender */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		03AAC6320EC9996D0083BD57 /* EDCommon.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EDCommon.framework;
+			remoteRef = 03AAC6310EC9996D0083BD57 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8DC2EF520486A6940098B216 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEDA09100DDA2A6400A8B498 /* EDMessageTOC.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		031A06920E9F14EA00DADB91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				031A069C0E9F154A00DADB91 /* mailsender.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF540486A6940098B216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE221E9C0DD3E08400DBD46E /* EDCompositeContentCoder.m in Sources */,
+				DE221E9E0DD3E08400DBD46E /* EDContentCoder.m in Sources */,
+				DE221EA00DD3E08400DBD46E /* EDHTMLTextContentCoder.m in Sources */,
+				DE221EA20DD3E08400DBD46E /* EDMultimediaContentCoder.m in Sources */,
+				DE221EA40DD3E08400DBD46E /* EDPlainTextContentCoder.m in Sources */,
+				DE221EA60DD3E08400DBD46E /* EDTextContentCoder.m in Sources */,
+				DE221EB80DD3E0AE00DBD46E /* NSCalendarDate+NetExt.m in Sources */,
+				DE221EBC0DD3E0AE00DBD46E /* NSCharacterSet+MIME.m in Sources */,
+				DE221EBE0DD3E0AE00DBD46E /* NSData+MIME.m in Sources */,
+				DE221EC00DD3E0AE00DBD46E /* NSImage+XFace.m in Sources */,
+				DE221EC20DD3E0AE00DBD46E /* NSString+MessageUtils.m in Sources */,
+				DE221EC40DD3E0AE00DBD46E /* NSString+PlainTextFlowedExtensions.m in Sources */,
+				DE221ED50DD3E0DD00DBD46E /* EDDateFieldCoder.m in Sources */,
+				DE221ED70DD3E0DD00DBD46E /* EDEntityFieldCoder.m in Sources */,
+				DE221ED90DD3E0DD00DBD46E /* EDFaceFieldCoder.m in Sources */,
+				DE221EDB0DD3E0DD00DBD46E /* EDHeaderFieldCoder.m in Sources */,
+				DE221EDD0DD3E0DD00DBD46E /* EDIdListFieldCoder.m in Sources */,
+				DE221EDF0DD3E0DD00DBD46E /* EDTextFieldCoder.m in Sources */,
+				DE221EE80DD3E10F00DBD46E /* EDMailAgent.m in Sources */,
+				DE221EEA0DD3E10F00DBD46E /* EDSMTPStream.m in Sources */,
+				DE221EF60DD3E13B00DBD46E /* EDHeaderBearingObject.m in Sources */,
+				DE221EF80DD3E13B00DBD46E /* EDInternetMessage.m in Sources */,
+				DE221EFA0DD3E13B00DBD46E /* EDMConstants.m in Sources */,
+				DE221EFC0DD3E13B00DBD46E /* EDMessagePart.m in Sources */,
+				DEB8D1AE0DD52DB4007E88A5 /* OPSSLSocket.m in Sources */,
+				DEB8D1B30DD52E52007E88A5 /* NSString+OPOSErrors.m in Sources */,
+				DE0C15960E61BA1F00C1BC3F /* parsedate.y in Sources */,
+				03C571FD0E9D1DD50009F0F9 /* EDSecureSMTPStream.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03AAC6440EC99F530083BD57 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EDCommon;
+			targetProxy = 03AAC6430EC99F530083BD57 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		031A06970E9F14EB00DADB91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = MailSender;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		031A06980E9F14EB00DADB91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = MailSender;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		03FB447E0EBFCBDC00D287F4 /* Release (embedded) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					ppc64,
+					i386,
+					x86_64,
+				);
+				GCC_C_LANGUAGE_STANDARD = c99;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = "Release (embedded)";
+		};
+		03FB447F0EBFCBDC00D287F4 /* Release (embedded) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = 17;
+				DYLIB_CURRENT_VERSION = 17;
+				FRAMEWORK_SEARCH_PATHS = (
+					Dependencies/edcommon/build/UninstalledProducts,
+					"Dependencies/edcommon/build/**",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = EDMessage_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_MODE_FLAG = "u+w,go-w,o+rX";
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"-seg1addr",
+					0x35000000,
+				);
+				PRODUCT_NAME = EDMessage;
+				SKIP_INSTALL = YES;
+				WARNING_CFLAGS = "-Wmost";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = "Release (embedded)";
+		};
+		03FB44800EBFCBDC00D287F4 /* Release (embedded) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = MailSender;
+				ZERO_LINK = NO;
+			};
+			name = "Release (embedded)";
+		};
+		1DEB91AE08733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /;
+				FRAMEWORK_SEARCH_PATHS = Dependencies/edcommon/build/Debug;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = EDMessage_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				PRODUCT_NAME = EDMessage;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		1DEB91AF08733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEPLOYMENT_LOCATION = NO;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = 17;
+				DYLIB_CURRENT_VERSION = 17;
+				FRAMEWORK_SEARCH_PATHS = (
+					Dependencies/edcommon/build/UninstalledProducts,
+					Dependencies/edcommon/build/Release,
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = EDMessage_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_MODE_FLAG = "u+w,go-w,o+rX";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				OTHER_LDFLAGS = (
+					"-seg1addr",
+					0x35000000,
+				);
+				PRODUCT_NAME = EDMessage;
+				WARNING_CFLAGS = "-Wmost";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		1DEB91B208733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Debug;
+		};
+		1DEB91B308733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					ppc64,
+					i386,
+					x86_64,
+				);
+				GCC_C_LANGUAGE_STANDARD = c99;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		031A06990E9F151200DADB91 /* Build configuration list for PBXNativeTarget "MailSender" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				031A06970E9F14EB00DADB91 /* Release */,
+				03FB44800EBFCBDC00D287F4 /* Release (embedded) */,
+				031A06980E9F14EB00DADB91 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release (embedded)";
+		};
+		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "EDMessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91AF08733DA50010E9CD /* Release */,
+				03FB447F0EBFCBDC00D287F4 /* Release (embedded) */,
+				1DEB91AE08733DA50010E9CD /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release (embedded)";
+		};
+		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "EDMessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91B308733DA50010E9CD /* Release */,
+				03FB447E0EBFCBDC00D287F4 /* Release (embedded) */,
+				1DEB91B208733DA50010E9CD /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release (embedded)";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
