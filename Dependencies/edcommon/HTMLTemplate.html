@@ -1,0 +1,212 @@
+<HTML><HEAD><TITLE></TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+
+<BR><BR><FONT COLOR="#000066"><H1><A NAME="//apple_ref/occ/[[if mainInterface.interfaceTitle ==  
+Protocol]]intf[[else]]cl[[endif]]/[[mainTitle]]">[[mainTitle]]</A></H1></FONT><BR>
+
+[[if hasMainInterface == 1]]
+[[if mainInterface.interfaceTitle == Class]]
+	<blockquote><DL><DT><B>Inherits From:</B></DT>  
+	<DD>[[if mainInterface.inheritsString.length > 0]][[mainInterface.inheritsString]][[else]]None <I>([[mainInterface.className]] is a root class)</I>[[endif]]</DD>
+</DL></blockquote>
+[[endif Class]]
+
+[[if mainInterface.conformedProtocols.count > 0]]
+	<blockquote><DL><DT><B>Conforms To:</B></DT>
+	[[foreach protocolName mainInterface.conformedProtocols prot1]]<DD>[[protocolName]]</DD>[[endforeach prot1]]
+</DL></blockquote>[[endif conformedProtocols]]
+[[endif hasMainInterface == 1]]
+
+	<blockquote><DL><DT><B>Declared In:</B></DT>
+	<DD>[[importString]]</DD>
+	</DL></blockquote>
+
+<BR><BR>
+
+[[if hasMainInterface == 1]]
+<H2>[[mainInterface.interfaceTitle]] Description</H2>
+[[mainInterface.entityDescription.formattedCommentString]]
+[[endif hasMainInterface == 1]]
+
+[[if typedefArray.count > 0]]
+	<P><HR WIDTH=50% ALIGN=LEFT>
+	<H2>Defined Types</H2>
+	<blockquote>
+	[[foreach group typedefGroupArray group4]]
+		[[if groupIndex > 0]]<hr WIDTH=25% ALIGN=LEFT>[[endif]]
+		<H4>Synopsis:</H4>
+		[[foreach typedef group.itemArray typedef1]]
+			<CODE><A NAME="//apple_ref/c/tdef/[[typedef.name]]">
+			typedef [[typedef.formattedValue]]<B>[[typedef.name]]</B>[[typedef.suffixValue]];</A></CODE><BR>
+		[[endforeach typedef1]]
+		[[if group.comment.commentString.length > 0]]
+		<H4>Description:</H4>
+		[[group.comment.formattedCommentString]]
+		[[endif commentLength]]
+	[[endforeach group4]]
+	</blockquote>
+[[endif typedefArray]]
+
+[[if constantArray.count > 0]]
+	<P><HR WIDTH=50% ALIGN=LEFT>
+	<H2>Symbolic Constants</H2>
+	<blockquote>
+	[[foreach group constantGroupArray group5]]
+		[[if groupIndex > 0]]<hr WIDTH=25% ALIGN=LEFT>[[endif]]
+		<H4>Synopsis:</H4>
+		[[foreach constant group.itemArray constant1]]
+			<CODE><B><A NAME="//apple_ref/c/econst/[[constant.name]]">[[constant.name]]</A></B>&nbsp;&nbsp;[[constant.formattedValue]]</CODE><BR>
+		[[endforeach constant1]]
+		[[if group.comment.commentString.length > 0]]
+		<H4>Description:</H4>
+		[[group.comment.formattedCommentString]]
+		[[endif commentLength]]
+	[[endforeach group5]]
+	</blockquote>
+[[endif constantArray]]
+
+[[if macroArray.count > 0]]
+	<P><HR WIDTH=50% ALIGN=LEFT>
+	<H2>Macro Definitions</H2>
+	<blockquote>
+	[[foreach group macroGroupArray group2]]
+		[[if groupIndex > 0]]<hr WIDTH=25% ALIGN=LEFT>[[endif]]
+		<H4>Synopsis:</H4>
+		[[foreach macro group.itemArray macro1]]
+			<CODE><B><A NAME="//apple_ref/c/func/[[macro.name]]">[[macro.name]]</A></B>([[macro.parameterString]])</CODE><BR>
+		[[endforeach macro1]]
+		[[if group.comment.commentString.length > 0]]
+		<H4>Description:</H4>
+		[[group.comment.formattedCommentString]]
+		[[endif commentLength]]
+	[[endforeach group2]]
+	</blockquote>
+[[endif macroArray]]
+
+[[if functionArray.count > 0]]
+	<P><HR WIDTH=50% ALIGN=LEFT>
+	<H2>Functions</H2>
+	<blockquote>
+	[[foreach group functionGroupArray group3]]
+		[[if groupIndex > 0]]<hr WIDTH=25% ALIGN=LEFT>[[endif]]
+		<H4>Synopsis:</H4>
+		[[foreach function group.itemArray function1]]
+			<CODE>[[function.formattedType]]<B><A NAME="//apple_ref/c/func/[[function.name]]">[[function.name]]</A></B>([[function.formattedParameterString]]);</CODE><BR>
+		[[endforeach function1]]
+		[[if group.comment.commentString.length > 0]]
+		<H4>Description:</H4>
+		[[group.comment.formattedCommentString]]
+		[[endif commentLength]]
+	[[endforeach group3]]
+	</blockquote>
+[[endif functionArray]]
+
+[[if inlineFunctionArray.count > 0]]
+	<P><HR WIDTH=50% ALIGN=LEFT>
+	<H2>Static Inline Functions</H2>
+	<blockquote>
+	[[foreach group inlineFunctionGroupArray group3]]
+		[[if groupIndex > 0]]<hr WIDTH=25% ALIGN=LEFT>[[endif]]
+		<H4>Synopsis:</H4>
+		[[foreach function group.itemArray function1]]
+			<CODE>[[function.formattedType]]<B><A NAME="//apple_ref/c/func/[[function.name]]">[[function.name]]</A></B>([[function.formattedParameterString]])</CODE><BR>
+		[[endforeach function1]]
+		[[if group.comment.commentString.length > 0]]
+		<H4>Description:</H4>
+		[[group.comment.formattedCommentString]]
+		[[endif commentLength]]
+	[[endforeach group3]]
+	</blockquote>
+[[endif inlineFunctionArray]]
+
+[[if variableArray.count > 0]]
+	<P><HR WIDTH=50% ALIGN=LEFT>
+	<H2>Global Variables</H2>
+	<blockquote>
+	[[foreach group variableGroupArray group6]]
+		[[if groupIndex > 0]]<hr WIDTH=25% ALIGN=LEFT>[[endif]]
+		<H4>Synopsis:</H4>
+		[[foreach global group.itemArray global1]]
+			<CODE>[[global.formattedType]]<B><A NAME="//apple_ref/c/data/[[global.name]]">[[global.name]]</A></B>[[global.posttype]];</CODE><BR>
+		[[endforeach global1]]
+		[[if group.comment.commentString.length > 0]]
+		<H4>Description:</H4>
+		[[group.comment.formattedCommentString]]
+		[[endif commentLength]]
+	[[endforeach group6]]
+	</blockquote>
+[[endif variableArray]]
+
+[[if hasMainInterface != 0]][[comment - Everything else is only done if we have an interface]]
+
+[[if mainInterface.interfaceTitle == Class]][[if mainInterface.ivarArray.count > 0]]
+	<P><HR WIDTH=50% ALIGN=LEFT>
+	<H2>Instance Variables</H2>
+	<blockquote>
+	[[foreach ivar mainInterface.ivarArray ivar1]]
+		<CODE>[[ivar.formattedType]]<B>[[ivar.name]]</B>[[ivar.posttype]];</CODE><BR>[[endforeach ivar1]]
+	<P><TABLE>
+	[[foreach ivar mainInterface.fullIvarArray ivar2]]
+		<TR><TD>[[ivar.fullName]]</TD><TD>[[ivar.entityDescription.formattedCommentString]]</TD></TR>
+	[[endforeach ivar2]]
+	</TABLE>
+	</blockquote>
+[[endif ivarArray]][[endif Class]]
+
+
+[[if mainInterface.declarationArray.count > 0]]
+	<P><HR WIDTH=50% ALIGN=LEFT>
+	<H2>Method Types</H2>
+	<blockquote>
+	[[foreach group mainInterface.declarationGroupArray group1]]
+		[[if group.comment.commentString.length > 0]]
+			[[group.comment.formattedCommentString]]
+		[[endif]]
+		<DL><DT></DT>
+		[[foreach method group.methodArray method2]]
+			<DD> <A HREF="#[[method.methodName]]">[[method.methodName]]</A></DD>
+		[[endforeach method2]]
+		</DL>
+	[[endforeach group1]]
+	</blockquote>
+[[endif declArray]]
+
+[[if mainInterface.classMethods.count > 0]]
+
+	<P><HR WIDTH=50% ALIGN=LEFT>
+	<H2>Class Methods</H2>
+ 
+	[[foreach method mainInterface.classMethods method1]]
+		[[if methodIndex > 0]]<P><HR WIDTH=25% ALIGN=LEFT>[[endif]]
+		<A NAME="[[method.methodName]]"></A><H3><A NAME="//apple_ref/occ/[[if mainInterface.interfaceTitle ==  
+Protocol]]intfm[[else]]clm[[endif]]/[[mainTitle]]/[[method.selectorName]]">[[method.selectorName]]</A></H3>
+		<CODE>+ [[method.formattedReturnType]][[if method.argumentCount == 0]]<B>[[method.selectorName]]</B>[[else]][[foreach arg method.arguments arg1]][[if argIndex > 0]] [[endif]]<B>[[arg.argName]]:</B>[[arg.argType]]<EM>[[arg.varName]]</EM>[[endforeach arg1]]
+			[[endif]]
+		</CODE><P>
+		[[method.entityDescription.formattedCommentString]]
+	[[endforeach method1]]
+[[endif classMethods]]
+
+[[if mainInterface.instanceMethods.count > 0]] 
+
+	<HR WIDTH=50% ALIGN=LEFT>
+	<H2>Instance Methods</H2>
+ 
+	[[foreach method mainInterface.instanceMethods method1]]
+		[[if methodIndex > 0]]<P><HR WIDTH=25% ALIGN=LEFT>[[endif]]
+		<A NAME="[[method.methodName]]"></A><H3><A NAME="//apple_ref/occ/[[if mainInterface.interfaceTitle ==  
+Protocol]]intfm[[else]]instm[[endif]]/[[mainTitle]]/[[method.selectorName]]">[[method.selectorName]]</A></H3><P>
+		<CODE>- [[method.formattedReturnType]][[if method.argumentCount == 0]]<B>[[method.selectorName]]</B>[[else]][[foreach arg method.arguments arg1]][[if argIndex > 0]] [[endif]]<B>[[arg.argName]]:</B>[[arg.argType]]<EM>[[arg.varName]]</EM>[[endforeach arg1]]
+			[[endif]]
+		</CODE><P>
+		[[method.entityDescription.formattedCommentString]]
+	[[endforeach method1]]
+[[endif instanceMethods]]
+
+[[endif hasMainInterface]]
+
+<P><HR>
+Version [[version]] Copyright &copy;[[copyrightYear]][[if copyrightOwner.length > 0]] by [[copyrightOwner]][[endif]].  All Rights Reserved.  [[timestampString]]
+<P>
+</BODY></HTML>

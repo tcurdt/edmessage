@@ -1,0 +1,26 @@
+# GNUstepBuild
+# $Id: GNUstepBuild,v 2.3 2003-11-10 00:07:22 znek Exp $
+
+
+ifeq "$(GUI_LIB)" "nil"
+ADDITIONAL_OBJCFLAGS += -DEDCOMMON_WOBUILD
+endif
+
+
+# Target specific section
+# EDCommon build global definitions that apply to specific targets 
+
+# Mac OS X
+ifneq ($(findstring darwin, $(GNUSTEP_HOST_OS)),)
+  ADDITIONAL_OBJCFLAGS += -DEDCOMMON_OSXBUILD
+
+  # Mac OS X 10.2
+  ifneq ($(findstring darwin6, $(GNUSTEP_HOST_OS)),)
+    ADDITIONAL_OBJCFLAGS += -DMAC_OS_X_VERSION_10_2
+  endif
+
+  # Mac OS X 10.3
+  ifneq ($(findstring darwin7, $(GNUSTEP_HOST_OS)),)
+    ADDITIONAL_OBJCFLAGS += -DMAC_OS_X_VERSION_10_3
+  endif
+endif

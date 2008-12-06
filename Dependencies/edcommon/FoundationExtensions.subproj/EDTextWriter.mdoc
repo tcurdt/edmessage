@@ -1,0 +1,23 @@
+
+@protocol EDTextWriter
+
+/*" The #EDTextWriter protocol declares several methods for writing some text. It allows for classes that produce strings to write to an abstract interface, decoupling the producer of the text from its consumer. "*/
+
+- (void)flush;
+
+/*" Ensures that all temporary buffers are written to the output facility. "*/
+
+- (void)writeString:(NSString *)string;
+
+/*" Writes string to the output facility. "*/
+
+- (void)writeLine:(NSString *)string;
+
+/*" Writes string and a newline sequence to the output facility. "*/
+
+- (void)writeFormat:(NSString *)format, ...;
+
+/*" Creates a string from the !{printf} style format and arguments and writes it to the output facility. "*/
+
+
+@end

@@ -1,0 +1,51 @@
+
+@implementation EDMLTagProcessor
+/*" Protocol used by the EDMLParser to create elements from tags. 
+
+In all methods that receive a tag name and attribute list, the tag name is a "qualified" tag name represented as an object pair with the namespace URL as first object and the actual tag name as second object. The attribute list is an array of object pairs that contains the "qualified" attribute name as first object and the attribute value as second. Note that the qualified attribute name in turn is an object pair that contains the attribute's namespace as first and the attribute's name as second object. (Sorry for the mess but would you really want a class for each?)"*/
+
+- (id)documentForElements:(NSArray *)elements;
+
+/*" Must return a document object for the list of elements. This document object will be returned from #{parseDocument:} in the parser. "*/
+
+
+- (NSString *)defaultNamespace;
+
+/*" Must return the namespace that will be assigned to elements without a namespace prefix in absence of any xmlns definitions for the default namespace. If documents are not XML, this can be !{nil}. "*/
+
+
+- (BOOL)spaceIsString;
+
+/*" If this method returns YES, all whitespace between tags is treated as text. Consequently, #{objectForSpace:} will never be called. "*/
+
+
+- (EDMLElementType)typeOfElementForTag:(EDObjectPair *)tagName attributeList:(NSArray *)attrList;
+
+/*" Must return the type of the element. This can either be !{EDMLSingleElement} in which case no end tag is expected or !{EDMLContainerElement} in which the parser expects a corresponding end tag. This also determines which of the #{elementForTag:attributeList:} methods is used to create the element object.
+
+If this method returns !{EDMLUnknownTag} the parser turns the tag into a string for which a string element will be created. This does not affect the handling of namespaces definitions in such tags.
+
+In some cases, WebObjects templates for example, you might need the attribute list to determine whether the element is a container or not. Note however, that the parser also calls this method when it encounters an end tag and hence has no attribute list. In this case it is probably best to check for a !{nil} attribute list, which indicates an end tag, and return !{EDMLContainerElement} if in doubt. "*/
+
+
+- (id)elementForTag:(EDObjectPair *)tagName attributeList:(NSArray *)attrList;
+
+/*" Must return an element object for the given tag name and attribute list. See the class description for an explanation of the tagName and attrList arguments. "*/
+
+- (id)elementForTag:(EDObjectPair *)tagName attributeList:(NSArray *)attrList containedElements:(NSArray *)containedElements;
+
+/*" Must return a container element object for the given tag name and attribute list. See the class description for an explanation of the tagName and attrList arguments. %ContainedElements is an array of all elements that were created between the start and end tags for this element. "*/
+
+
+- (id)objectForText:(NSString *)string;
+
+/*" Must return an object representing the text in string."*/
+
+
+- (id)objectForSpace:(NSString *)string;
+
+/*" Must return an object representing the spaces in string. Note that unless you set #preservesWhitespace in the parser %string is always !{@" "}."*/
+
+
+@end
+

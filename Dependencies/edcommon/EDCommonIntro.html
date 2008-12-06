@@ -1,0 +1,74 @@
+<HTML><HEAD><TITLE></TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<a href="EDCommonTOC.html">[UP]</a>
+
+<BR><BR><FONT COLOR="#000066"><H1><A NAME="">The EDCommon Framework</A></H1></FONT><BR>
+
+
+
+	<blockquote><DL><DT><B>Framework:</B> Library/Frameworks/EDCommon.framework</blockquote>
+	<blockquote><DL><DT><B>Header File Directories:</B> Library/Frameworks/EDCommon.framework/Headers</blockquote>
+	<blockquote><DL><DT><B>Interface Builder Palettes:</B> Developer/Palettes/EDPalette.palette</blockquote>
+
+
+<BR><BR>
+
+
+<h3>Introduction</h3>
+<p>This framework contains a collection of useful Foundation and AppKit extensions, data structures and widgets. An InterfaceBuilder palette is provided as well.</p>
+
+<p>For use in WebObjects 4 projects and/or on platforms that do not have AppKit, Solaris for example, a version without AppKit dependencies can be built by changing one build setting in the PBWO makefiles (which are included by the GNUStep makefiles.) Non-AppKit builds are currently not supported from PBX.</p> 
+
+
+<h3>Collections</h3>
+<p>The Apple Foundation framework contains only three datastructures that are typically classified as collections, namely NSArray, NSDictionary and NSSet. Their interfaces are generic and cover all fundamental access patterns but under certain circumstances a developer might want tighter control, better performance for special access patterns or, simpy, a more explicit realisation of a design pattern. From a purely functional point <b>EDObjectPair</b> and <b>EDStack</b> do not add anything to NSArray. However, EDStack clarifies the indended use of the datastructure and EDObjectPair can be used when a design explicitly deals with a relationship between two objects, typically an association of a value or an object with another object. An array of EDObjectPairs can be used instead of an NSDictionary when the order of key/value pairs is relevant and lookups of values by key do not need to be fast. EDObjectPairs also use less memory than NSArray and have a better hash function. (If you know LISP you probably use pairs for all sorts of other structures.)<p>
+
+<p>Sorted arrays can be implemented using NSArrays but binary search trees such as red/black trees, which are used for <b>EDSortedArray</b> have better performance characteristics. Insertions into the sorted array take O(log n) instead of O(n), and contains and index-of tests can also be carried out in O(log n) instead of O(n). Inserting/removing at the end and retrieving objects by index is marginally slower, O(log n) instead of O(1). NSSets are even faster at contains tests, O(1), but they do no support ordered collections. The main disadvantage of binary search trees is their memory usage, 20 bytes per object rather than 4 to 8 in an array. </p>
+
+<p><b>EDNumberSets</b> can be used when large sets of numbers must be stored efficiently. The datastructure also supports efficicent calculation of covered and uncovered ranges of numbers in the set.</p>
+
+<p>NSArrays do not allow "gaps" between the objects. This can be worked around with a dedicated marker object for empty positions but when these gaps become large storage and the count operation become inefficient. 
+
+<b>EDSparseClusterArray</b> solves these problems to a certain extent. It works well when larger groups of objects, i.e. a few hundred objects, are separated by few small gaps and these groups (or clusters) are separated by arbitrarily large gaps. Hence the name EDSparse<i>Cluster</i>Array.</p>
+
+
+
+<h3>Foundation Classes</h3>
+<p>Most of the functionality in the Foundation framework is implemented in Objective-C classes but certain parts use C structures and functions. There are certainly good reasons for the design choices made but sometimes the corresponding counterparts can be useful. <b>EDRange</b> is a straightforward implementation of NSRange and associated functions. It is most useful when collections of ranges must be processed. <b>EDLightWeightLock</b> and <b>EDBitmapCharacterSet</b> provide fast but simple implementations of parts of the functionality offered by NSLock and NSCharacterSet.</p>
+
+
+<h3>Socket Classes</h3>
+<p>For some strange reason NeXT, and later Apple, never provided an object-oriented interface for socket programming (except maybe WXSocket in the old WOExamples framework but that one works with <code>char*</code> and friends.) Of course, there are several implementions now, most of them available as source code. The most well-known one is probably OmniGroup's OmniNetworking framework. Compared to Omni's classes the socket classes in this framework are probably a bit more "modern" in the sense that they make use of the few networking classes and methods that were introduced to the Foundation kit. The EDSocket classes also allows for localisation of most of the common networking errors.</p>
+
+<p>The class-hierarchy is fairly straightforward: <b>EDSocket</b> inherits from NSFileHandle and acts as a common base class. This is a fairly natural choice as a socket is really a special file handle and NSFileHandle actually contains some useful methods to deal with socket functionality. At the moment there is only on subclass, namely EDIPSocket representing the protocol family <code>inet</code>. <b>EDIPSocket</b> provides methods for basic IP funtionality: binding to a port, connecting to an address, setting popular socket options, etc. It is not meant to be instantiated, though. This is left to its two sublasses <b>EDTCPSocket</b> and <b>EDUDPSocket</b>. Note that some (IP) socket related functionality is implemented in a category on NSFileHandle.
+</p>
+
+
+<h3>Markup Language Parser</h3>
+<p>The <b>EDMLParser</b> was implemented before the widespread adoption of XML and today's abundance of corresponding parsers but it remains useful, especially in conjunction with the <b>EDAOMTagProcessor</b>. It is probably even more useful today as more and more applications have to deal with XML files. Moreover, the parser can deal with fairly bad markup, as often found in HTML documents, but also handles more complex constructs such as XML namespaces.</p>
+
+<p>The parser needs a tag processor that implements the <b>EDMLTagProcessorProtocol</b> and uses the callback methods at events during the parsing of a string/document. (Some few methods deal with configuration.) This mode of operation is very similar to the SAX API and provides great flexibility. Most applications, however, will use the Application Object Model tag processor which transforms the document into a tree in which the nodes are represented by objects. This is very DOM like with one significant exception: Unlike typical DOM parsers EDAOMTagProcessor uses node classes created by the application developer. This means, of course, that the resulting tree is directly meaningful in the application and the node classes can contain application specific behaviour. See the implementations in the EDSLProcessor framework for an example.</p>
+
+
+
+<h3>NSApplication/EDApplication</h3>
+<p>Most of the functionality, such as registering factory defaults from a plist file, getting (creating) the standard library directory etc. are implemented in the NSApplication category. It is, however, still useful to change the main application class to EDApplication as this will make factory defaults completely automatic and will also ensure that some feedback is provided to the user if an exception came through uncaught. (Not that the user can do anything about it but they can be warned to save their work and quit the application.)</p>
+
+
+
+<h3>Widgets</h3>
+<p>The framework contains a few widgets that are commonly found in applications but are not part of the AppKit. <b>EDActivityIndicator</b>, for example implementes the chasing arrows displayed by Mail, OmniWeb and various other applications.</p>
+
+
+
+<h3>Foundation and AppKit Extensions</h3>
+<p>The usual categories. Some extensions, sometimes just convenience methods that Apple forgot. Favourites might be removing whitespace around strings, appending all sorts off stuff to an attributed string and retrieving an object with a case insensitive string key. The string category has some methods to map file extensions to MIME types and vice versa and to work with MIME character set names instead of NSStringEncodings.</p>
+
+<p>AppKit extensions are not always implemented as categories. <b>EDTableView</b> is a subclass that allows more control of the click process in table cells and <b>EDKeyControlWindow</b> is a window subclass that simplifies implemented keyboard shortcuts. <b>EDToolbarDefinition</b> is a standalone class that can create and manage NSToolbars defined in an external text file; format is the Omni not the Apple one.</p>
+
+<p>Finally, the attributed string category in the AppKit subproject contains a method that finds URLs and applies the "usual" formatting to them; the "URLifier."</p>
+
+<P><HR>
+Copyright &copy; 2002-2007 by Mulle Kybernetik. All Rights Reserved.  
+<P>
+</BODY></HTML>
