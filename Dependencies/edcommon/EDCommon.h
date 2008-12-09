@@ -20,6 +20,19 @@
 
 #import <Cocoa/Cocoa.h>
 
+#if !defined(MAC_OS_X_VERSION_10_5) || MAC_OS_X_VERSION_MAX_ALLOWED < MAC_OS_X_VERSION_10_5
+#ifndef NSINTEGER_DEFINED
+#ifdef NS_BUILD_32_LIKE_64
+typedef long NSInteger;
+typedef unsigned long NSUInteger;
+#else
+typedef int NSInteger;
+typedef unsigned int NSUInteger;
+#endif
+#define NSINTEGER_DEFINED 1
+#endif
+#endif
+
 #import "EDCommonDefines.h"
 #import "EDObjcRuntime.h"
 

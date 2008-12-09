@@ -20,7 +20,7 @@
 
 #import "NSString+Extensions.h"
 #import "EDObjectPair.h"
-
+#import <unistd.h>
 
 @interface NSString(EDExtensionsPrivateAPI)
 + (NSDictionary *)_contentTypeExtensionMapping;

@@ -118,12 +118,12 @@ BOOL EDClassIsSuperclassOfClass(Class aClass, Class subClass)
 {
     Class class;
 
-    class = class_getSuperclass(subClass);
+    class = subClass->super_class;
     while(class != nil)
         {
         if(class == aClass)
             return YES;
-		class = class_getSuperclass(subClass);
+		class = class->super_class;
         }
     return NO;
 }

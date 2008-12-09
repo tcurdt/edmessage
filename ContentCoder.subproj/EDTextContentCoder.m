@@ -187,7 +187,7 @@
                     }
                 else if([tag isEqualToString:@"bold"])
                     {
-                    marker = [EDObjectPair pairWithObjects:string:[NSNumber numberWithUnsignedInteger:[text length]]];
+                    marker = [EDObjectPair pairWithObjects:string:[NSNumber numberWithUnsignedInt:[text length]]];
                     [markerStack pushObject:marker];
                     }
                 else if([tag isEqualToString:@"/bold"])
@@ -199,7 +199,7 @@
                     }
                 else if([tag isEqualToString:@"italic"])
                     {
-                    marker = [EDObjectPair pairWithObjects:string:[NSNumber numberWithUnsignedInteger:[text length]]];
+                    marker = [EDObjectPair pairWithObjects:string:[NSNumber numberWithUnsignedInt:[text length]]];
                     [markerStack pushObject:marker];
                     }
                 else if([tag isEqualToString:@"/italic"])
