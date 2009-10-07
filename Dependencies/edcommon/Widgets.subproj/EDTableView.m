@@ -165,7 +165,7 @@
 }
 
 
-- (int)clickedColumn
+- (NSInteger)clickedColumn
 {
     if(flags.isManagingClick == NO)
         return [super clickedColumn];
@@ -173,7 +173,7 @@
 }
 
 
-- (int)clickedRow
+- (NSInteger)clickedRow
 {
     if(flags.isManagingClick == NO)
         return [super clickedRow];

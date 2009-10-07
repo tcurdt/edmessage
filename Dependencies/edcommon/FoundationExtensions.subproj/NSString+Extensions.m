@@ -326,7 +326,7 @@ static NSMutableDictionary *teTable = nil;
     if(teTable == nil)
         {
         path = [[NSBundle bundleForClass:NSClassFromString(@"EDCommonFramework")] pathForResource:@"MIME" ofType:@"plist"];
-        teTable = [[[NSString stringWithContentsOfFile:path] propertyList] retain];
+        teTable = [[[NSString stringWithContentsOfFile:path encoding: NSASCIIStringEncoding error:NULL] propertyList] retain];
         NSAssert([teTable isKindOfClass:[NSDictionary class]], @"Problem with MIME.plist");
         }
     return teTable;

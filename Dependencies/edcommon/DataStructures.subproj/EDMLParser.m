@@ -997,7 +997,7 @@ static __inline__ int match(NSArray *stack, int t0, int t1, int t2, int t3, int 
     bundle = [NSBundle bundleForClass:NSClassFromString(@"EDCommonFramework")];
     if((path = [bundle pathForResource:@"XMLEntities" ofType:@"plist"]) == nil)
         [NSException raise:NSGenericException format:@"Missing resource XMLEntities.plist in EDCommon.framework"];
-    xmlEntities = [[NSString stringWithContentsOfFile:path] propertyList];
+    xmlEntities = [[NSString stringWithContentsOfFile:path encoding: NSASCIIStringEncoding error:NULL] propertyList];
     [self setEntityTable:xmlEntities];
 }
 

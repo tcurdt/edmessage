@@ -50,7 +50,7 @@ typedef unsigned char byte;
 static __inline__ id EDCast(id object, Class aClass, SEL cmd, id self, const char *file, int line)
 {
     if((object != nil) && ([object isKindOfClass:aClass] == NO))
-        [[NSAssertionHandler currentHandler] handleFailureInMethod:cmd object:self file:[NSString stringWithCString:file] lineNumber:line description:@"cast failure; cannot cast instance of %@ to %@", NSStringFromClass([object class]), NSStringFromClass(aClass)];
+        [[NSAssertionHandler currentHandler] handleFailureInMethod:cmd object:self file:[NSString stringWithCString: file encoding: NSASCIIStringEncoding] lineNumber:line description:@"cast failure; cannot cast instance of %@ to %@", NSStringFromClass([object class]), NSStringFromClass(aClass)];
     return object;
 }
 

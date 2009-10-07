@@ -53,7 +53,7 @@ static EDLightWeightLock *retainLock;
 //	RETAIN COUNT IMPLEMENTATION
 //---------------------------------------------------------------------------------------
 
-- (unsigned int)retainCount
+- (NSUInteger)retainCount
 {
     return retainCount + 1;
 }

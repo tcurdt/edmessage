@@ -23,7 +23,7 @@
 
 @interface EDIRCObject : NSObject
 {
-    unsigned int retainCount;  /*" Holds the current retain count of object minus one. "*/
+    NSUInteger retainCount;  /*" Holds the current retain count of object minus one. "*/
 }
 
 @end
